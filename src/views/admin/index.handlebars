@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/admin/index.css">
+
+
+<h2>Painel de Produtos</h2>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td class="imagem">Foto</td>
+                <td>Nome</td>
+                <td>Preço</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each produto}}
+            <tr onclick="location.href='/admin/produto/editar/{{id}}'">
+                <td class="imagem"><img src="/produtos/{{path_foto}}" alt=""></td>
+                <td>{{nome}}</td>
+                <td>{{preco}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    Total Produtos: {{produto.total}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

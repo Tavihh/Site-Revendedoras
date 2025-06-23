@@ -1,0 +1,82 @@
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+.painel-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+a > img{
+    width:35px;
+}
+
+table{
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead td{
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+table tbody {
+    background-color: #f9f9f9;
+}
+
+table tbody td{
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 0px;
+    border-bottom: 1px solid black;
+}
+
+table td:nth-child(3) {
+    width: 100px;
+}
+
+a{
+    cursor: pointer;
+}
+
+.imagem {
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.imagem img{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.form-submit{
+    cursor: pointer;
+    width: max-content;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+.form-submit:hover, .form-file:hover{
+    opacity: 1;
+}
+
+tfoot {
+    text-indent: 20px;
+    background-color: #333;
+    color: white;
+}

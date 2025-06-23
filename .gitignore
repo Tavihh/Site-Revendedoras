@@ -1,0 +1,3 @@
+database.sqlite
+src/public/produtos/*
+node_modules
