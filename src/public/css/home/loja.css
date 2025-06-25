@@ -1,4 +1,7 @@
 /* Main  */*
+main {
+    padding: 0px 200px;
+}
 
 section{
     display: flex;
@@ -57,4 +60,10 @@ a{
     height: 100px;
     margin-top: 10px;
     margin: 10px -10px -10px;
+}
+
+@media screen and (max-width:650px) {
+    main {
+        padding: 10px;
+    }
 }
