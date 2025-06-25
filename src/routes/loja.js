@@ -2,6 +2,7 @@
 const router = require('express').Router()
 const Loja = require('../models/Loja')
 const Produto = require('../models/Produto')
+const { Op } = require('sequelize')
 
 // rotas GET
 router.get('/:id/:nomeLoja', (req, res)=>{
@@ -28,8 +29,14 @@ router.get('/:id/:nomeLoja', (req, res)=>{
 })
 
 // rotas POST
-router.post('/pesquisa/:id', (req,res)=>{
-    Produto.findAll({where:{nome:{[Op.like]: `%${req.body.psq}%`}},fk_id:req.body.id}).then((produto)=>{
+router.post('/:id/:nomeLoja/pesquisa', (req,res)=>{
+    const id = req.params.id
+    const nomeLoja = req.params.nomeLoja
+
+    Promise.all([
+        Produto.findAll({where:{nome:{[Op.like]: `%${req.body.psq}%`}},fk_id:req.body.id}),
+        Loja.findOne({where:{id,nomeLoja}})
+    ]).then(([produto,loja])=>{
         produto = produto.map((item)=>{
             item = item.toJSON()
             const [precoInteiro, precoDecimal] = item.preco.toFixed(2).toString().split('.')
@@ -37,7 +44,8 @@ router.post('/pesquisa/:id', (req,res)=>{
             item.precoDecimal = precoDecimal
             return item
         })
-        res.render('home/loja',{produto})
+        res.locals.loja = loja.toJSON()
+        res.render('home/loja',{layout:'store',produto})
     }).catch((err)=>{
         console.log(err)
         res.status(404).send('Ocorreu um erro ao carregar os produtos, tente novamente')
