@@ -1,6 +1,7 @@
 /* Main  */*
 main {
     padding: 0px 50px;
+    padding-bottom: 50px;
 }
 
 section{
@@ -65,5 +66,6 @@ a{
 @media screen and (max-width:800px) {
     main {
         padding: 10px;
+        padding-bottom: 50px;
     }
 }
