@@ -1,21 +1,13 @@
-<link rel="stylesheet" href="/css/admin/form.css">
+<link rel="stylesheet" href="/css/form.css">
 
 <div class="form-body">
     <h2>Loja</h2>
-    <form action="/admin/editarLoja/" method="post">
+    <form action="/admin/editar/" method="post">
+        <input class="form-input" type="text" name="nomeLoja" id="nomeLoja" placeholder="Nome da Loja" value="{{loja.nomeLoja}}">
         <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome" value="{{loja.nome}}">
+        <input class="form-input" type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" value="{{loja.sobrenome}}">
         <input class="form-input" type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" oninput="mascaraTelefone(this)" required value="{{loja.telefone}}">
-        <input class="form-submit" type="submit" value="Atualizar">
-        <input class="form-submit" onclick="location.href='/admin'" type="button" value="Voltar">
-    </form>
-</div>
 
-<div class="form-body">
-    <h2>Conta</h2>
-    <form action="/admin/editar/{{user.id}}" method="post">
-        <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome" value="{{user.nome}}">
-        <input class="form-input" type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" value="{{user.sobrenome}}">
-        <input class="form-input" type="text" name="email" id="email" placeholder="E-mail" value="{{user.email}}">
         <input class="form-submit" type="submit" value="Atualizar">
         <input class="form-submit" onclick="location.href='/admin'" type="button" value="Voltar">
     </form>

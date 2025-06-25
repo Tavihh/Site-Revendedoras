@@ -22,12 +22,12 @@ const Produto = sequelize.define('produtos',{
 },{freezeTableName:true})
 
 Produto.belongsTo(Loja, {
-    foreignKey: 'fk_telefone',
-    targetKey: 'telefone',
+    foreignKey: 'fk_id',
+    targetKey: 'id',
     onUpdate: 'CASCADE'
 })
 
-Produto.sync({alter:true}).then(()=>{
+Produto.sync().then(()=>{
     console.log("Tabela 'Produtos' OK")
 }).catch((err)=>{
     console.log("Tabela 'Produtos' Não OK, ERRO:",err)

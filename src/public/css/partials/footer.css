@@ -1,0 +1,15 @@
+/* Roda-Pé */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+footer a{
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+}

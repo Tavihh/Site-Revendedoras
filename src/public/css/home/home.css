@@ -1,0 +1,64 @@
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        .titulo {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .planos {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .plano {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .plano:hover {
+            transform: scale(1.03);
+        }
+
+        .plano h2 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .preco {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #6c63ff;
+            margin-bottom: 15px;
+        }
+
+        .beneficios {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .beneficios li {
+            margin: 8px 0;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #6c63ff;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+
+        .botao:hover {
+            background: #5548d8;
+        }

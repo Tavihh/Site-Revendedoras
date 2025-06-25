@@ -24,11 +24,8 @@ process.noDeprecation = true
         res.locals.error_msg = await req.flash('error_msg')
         res.locals.success_msg = await req.flash('success_msg')
         res.locals.error = await req.flash('error')
-        res.locals.user = await req.user || null
+        res.locals.loja = await req.user || null
 
-        // Layout da Loja
-        let loja = await Loja.findOne()
-        res.locals.loja = await loja.toJSON() 
         next()
     })
     // view engine

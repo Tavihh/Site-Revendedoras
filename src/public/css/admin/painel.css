@@ -1,3 +1,16 @@
+.link-loja {
+    font-weight: 600;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.link-loja:hover{
+    background-color: #999;
+    color: white;
+}
+
 h2 {
     text-align: center;
     padding: 10px;
