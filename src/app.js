@@ -50,7 +50,7 @@ app.post('/cadastrar', (req,res)=>{
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
     
-    let nomeLoja = capitalize(req.body.nomeLoja.trim())
+    let nomeLoja = req.body.nomeLoja.trim()
     let nome = capitalize(req.body.nome.trim())
     let sobrenome = capitalize(req.body.sobrenome.trim())
     let email = req.body.email.trim().toLowerCase()
