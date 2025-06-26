@@ -1,64 +1,120 @@
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-        }
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
 
-        .titulo {
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
+#hero {
+  background-color: #f1f1f1;
+  padding: 60px 0;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
 
-        .planos {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+#hero h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
 
-        .plano {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
+#hero p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
 
-        .plano:hover {
-            transform: scale(1.03);
-        }
+#hero ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
 
-        .plano h2 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
+#hero ul li {
+  margin: 10px 0;
+}
 
-        .preco {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #6c63ff;
-            margin-bottom: 15px;
-        }
+.btn {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
 
-        .beneficios {
-            list-style: none;
-            margin-bottom: 20px;
-        }
+.btn:hover {
+  background-color: #5a4bd8;
+}
 
-        .beneficios li {
-            margin: 8px 0;
-        }
+#beneficios {
+  padding: 40px 0;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
 
-        .botao {
-            display: inline-block;
-            background: #6c63ff;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            transition: background 0.3s;
-        }
+.planos {
+    display: flex;
+    gap: 5px;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
 
-        .botao:hover {
-            background: #5548d8;
-        }
+.plano {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.plano:hover {
+    transform: scale(1.03);
+}
+
+.plano h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.preco {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6c63ff;
+    margin-bottom: 15px;
+}
+
+.beneficios {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.beneficios li {
+    margin: 8px 0;
+    font-size: 0.8em;
+}
+
+.botao {
+    display: inline-block;
+    background: #6c63ff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background: #5548d8;
+}
+
+@media screen and (max-width:640px) {
+
+    .planos {
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    .plano {
+        width: 100%;
+    }
+}
