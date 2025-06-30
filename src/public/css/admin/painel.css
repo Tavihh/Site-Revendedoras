@@ -1,4 +1,4 @@
-.link-loja {
+/* .link-loja {
     font-weight: 600;
     background-color: white;
     border-radius: 5px;
@@ -9,7 +9,7 @@
 .link-loja:hover{
     background-color: #999;
     color: white;
-}
+} */
 
 h2 {
     text-align: center;
@@ -37,6 +37,7 @@ table thead td{
     text-align: center;
     background-color: #333;
     color: white;
+    padding: 10px;
 }
 
 table tbody {
@@ -52,6 +53,10 @@ table tbody td{
 
 table td:nth-child(3) {
     width: 100px;
+}
+
+table tbody tr:hover{
+      background-color: #eee;
 }
 
 a{
@@ -92,4 +97,8 @@ tfoot {
     text-indent: 20px;
     background-color: #333;
     color: white;
+}
+
+tfoot td {
+    padding: 5px;
 }

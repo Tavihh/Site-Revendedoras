@@ -24,7 +24,6 @@ const Produto = sequelize.define('produtos',{
 Produto.belongsTo(Loja, {
     foreignKey: 'fk_id',
     targetKey: 'id',
-    onUpdate: 'CASCADE'
 })
 
 Produto.sync().then(()=>{

@@ -1,14 +1,17 @@
 // importações
 const app = require('./config/config')
 const Admin = require('./routes/admin')
+const ADM = require('./routes/ADM')
 const loja = require('./routes/loja')
 const Loja = require('./models/Loja')
 const bcrypt = require('bcryptjs')
 const passport = require('./config/auth')
 const { eAdmin } = require('./helpers/eAdmin')
+const { eADM } = require('./helpers/eADM')
 
 // Sub Rotas
 app.use('/admin', eAdmin, Admin)
+app.use('/ADM', eADM, ADM)
 app.use('/loja', loja)
 
 // rotas GET

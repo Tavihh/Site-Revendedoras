@@ -25,7 +25,7 @@ main form{
     height: max-content;
 
     padding: 10px;
-    border-radius: inherit;
+    border-radius: 10px;
     background-color: white;
 }
 .div-select{
@@ -41,7 +41,7 @@ main form{
     width: 100%;
     padding: 10px;
     outline: 0px;
-    border-radius: 10px;
+    /* border-radius: 5px; */
 }
 
 .form-file-hidden{
