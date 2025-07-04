@@ -53,7 +53,7 @@ header h1 {
     padding: 20px;
     gap: 20px 10px;
     justify-content: flex-start; /* mantém os itens alinhados à esquerda */
-    max-width: 1370px; /* define uma largura máxima */
+    max-width: 1390px; /* define uma largura máxima */
     margin: 0 auto; /* centraliza o container na página */
 }
 
@@ -112,7 +112,7 @@ a{
 }
 
 
-@media screen and (max-width:1370px) {
+@media screen and (max-width:1390px) {
     section.catalogo {
         justify-content: center;
     }
