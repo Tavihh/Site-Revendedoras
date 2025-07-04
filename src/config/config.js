@@ -1,12 +1,23 @@
 // imports
 const express = require('express')
 const app = express()
-const handlebars = require('express-handlebars')
+const hbs = require('express-handlebars')
 const session = require('express-session')
 const flash = require('connect-flash')
 const path = require('path')
 const passport = require('passport')
-const Loja = require('../models/Loja')
+const Loja = require('../models/Catalogo')
+
+
+// helper
+
+const handlebars = hbs.create({
+  defaultLayout: 'main',
+  helpers: {
+    eq: (a, b) => a === b
+  }
+})
+
 
 // config
 process.noDeprecation = true
@@ -24,12 +35,12 @@ process.noDeprecation = true
         res.locals.error_msg = await req.flash('error_msg')
         res.locals.success_msg = await req.flash('success_msg')
         res.locals.error = await req.flash('error')
-        res.locals.loja = await req.user || null
+        res.locals.user = await req.user || null
 
         next()
     })
     // view engine
-    app.engine('handlebars', handlebars.engine({defaultLayout:'main'}))
+    app.engine('handlebars', handlebars.engine)
     app.set('view engine', 'handlebars')
     // json
     app.use(express.urlencoded({extended:true}))

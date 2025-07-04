@@ -1,104 +1,58 @@
-/* .link-loja {
-    font-weight: 600;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    border: 1px solid black;
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
-.link-loja:hover{
-    background-color: #999;
-    color: white;
-} */
-
-h2 {
-    text-align: center;
-    padding: 10px;
-}
-.painel-control{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
+.search-bar {
+    margin-bottom: 20px;
 }
 
-a > img{
-    width:35px;
-}
-
-table{
-    border-radius: 10px;
-    overflow: hidden;
-    border-collapse: collapse;
+.search-bar input {
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
 }
 
-table thead td{
-    text-align: center;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px #ccc;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+tbody tr:hover {
     background-color: #333;
     color: white;
-    padding: 10px;
-}
-
-table tbody {
-    background-color: #f9f9f9;
-}
-
-table tbody td{
-    cursor: pointer;
-    text-align: center;
-    padding: 5px 0px;
-    border-bottom: 1px solid black;
-}
-
-table td:nth-child(3) {
-    width: 100px;
-}
-
-table tbody tr:hover{
-      background-color: #eee;
-}
-
-a{
     cursor: pointer;
 }
 
-.imagem {
-    width: 100px;
-    overflow: hidden;
+td.pq {
+    width: 80px;
     text-align: center;
 }
 
-.imagem img{
-    width: 50px;
-    height: 50px;
+div.status {
+    width: 10px;
     margin: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
 }
 
-.form-submit{
-    cursor: pointer;
-    width: max-content;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
-    font-weight: 600;
-    opacity: 0.7;
-}
-.form-submit:hover, .form-file:hover{
-    opacity: 1;
-}
 
-tfoot {
-    text-indent: 20px;
-    background-color: #333;
-    color: white;
-}
 
-tfoot td {
-    padding: 5px;
-}
+
+
+
+

@@ -3,8 +3,13 @@ module.exports = {
         if(!req.user) {
             req.flash('error_msg','Você precisa estar logado')
             res.redirect('/login')
-        } else {
+            return
+        }
+        if(req.user.eAdmin) {
+            res.locals.layout = 'admin'
             next()
+        }else {
+            res.redirect('/revendedora')
         }
     }
 }

@@ -1,12 +1,11 @@
-<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/home/form.css">
 
 
-<div class="form-body">
-    <h2>Login</h2>
-    <form action="/login" method="post">
-        <input class="form-input" type="text" name="email" id="email" placeholder="E-mail">
-        <input class="form-input" type="password" name="senha" id="senha" placeholder="Senha">
-        <input class="form-submit" type="submit" value="Logar">
-        <input class="form-submit" onclick="history.go(-1)" type="button" value="Voltar">
+<section>
+    <h2>Entrar</h2>
+        <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
     </form>
-</div>
+</section>

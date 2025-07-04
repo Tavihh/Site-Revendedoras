@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/home/form.css">
+
+<section>
+    <h2>Catalogo</h2>
+    <form action="/registrar-catalogo" method="post">
+        
+        <div class="cores-container">
+            <label class="radio-color" style="--cor:#333">
+                <input type="radio" name="corFundo" value="#333" checked />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#de5068">
+                <input type="radio" name="corFundo" value="#de5068" />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#6a0dad">
+                <input type="radio" name="corFundo" value="#6a0dad" />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#0970cc">
+                <input type="radio" name="corFundo" value="#0970cc" />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#1b6a3e">
+                <input type="radio" name="corFundo" value="#1b6a3e" />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#630d0c">
+                <input type="radio" name="corFundo" value="#630d0c" />
+                <span></span>
+            </label>
+            <br><br>
+        </div>
+
+
+        <input class="form-input" type="text" name="nomeCatalogo" id="nomeCatalogo" placeholder="Nome da Loja">
+        <input class="form-input" type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" oninput="mascaraTelefone(this)" required>
+        <button type="submit">Criar Catalogo</button>
+    </form>
+</section>
+
+<script>
+    function mascaraTelefone(input) {
+    let value = input.value.replace(/\D/g, ''); // Remove tudo o que não for número
+    if (value.length <= 10) {
+        input.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    } else {
+        input.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    }
+}
+</script>

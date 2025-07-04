@@ -1,10 +1,10 @@
 const passport = require('passport')
 const localStrategy = require('passport-local').Strategy
-const Loja = require('../models/Loja')
+const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 
 passport.use(new localStrategy({usernameField:'email',passwordField:'senha'}, (email,senha,done)=>{
-    Loja.findOne({where:{email:email}}).then((usuario)=>{
+    User.findOne({where:{email:email}}).then((usuario)=>{
         if(!usuario) {
             done(null,false,{message:'Usúario não cadastrado'})
         } else {
@@ -29,7 +29,7 @@ passport.serializeUser((usuario,done)=>{
 })
 
 passport.deserializeUser((id,done)=>{
-    Loja.findOne({where:{id:id}}).then((usuario)=>{
+    User.findOne({where:{id:id}}).then((usuario)=>{
         if(usuario){
             done(null,usuario.toJSON())
         } else {

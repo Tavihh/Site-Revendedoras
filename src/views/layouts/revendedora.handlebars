@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel da Revendedora</title>
+  <link rel="stylesheet" href="/css/layouts/revendedora.css">
+</head>
+<body>
+    <header>
+        {{#if catalogo.status}}
+            <div class="status on"></div>
+        {{else}}
+            <div class="status off"></div>
+        {{/if}}
+    <h1>Painel da Revendedora</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="menuNav">
+        <a href="/revendedora">Painel</a>
+        <a href="/revendedora/edit-catalogo">Editar Catalogo</a>
+        <a href="/revendedora/add-produto">Adicionar Produtos</a>
+        <a href="/{{catalogo.nomeCatalogo}}">Ver Catálogo</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    </header>
+        {{>_message}}
+    <main>
+        {{{body}}}
+    </main>
+    {{>_footer}}
+    <script>
+        // Menu responsivo
+        function toggleMenu() {
+            const nav = document.getElementById("menuNav");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

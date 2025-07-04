@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revendedoras</title>
-    <link rel="stylesheet" href="/css/layouts/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo para Revendedoras</title>
+  <link rel="stylesheet" href="/css/layouts/main.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-        <h1>Catálogo Revendedoras</h1>
-        <nav>
-            <a href="/login">Login</a>
-            <a href="https://wa.me/5562992749698">Contato</a>
-            <a href="/">Adquira o Seu</a>
-        </nav>
-        </div>
+  <header>
+    <h1>Seu Catálogo, Sua Cara!</h1>
+    <p>Já pensou em ter o seu próprio catálogo para a sua loja?</p>
+    <a href="/" class="btn">Home</a>
+    <a href="/registrar" class="btn">Criar Conta</a>
+    <a href="/login" class="btn">Entrar</a>
   </header>
-    <main>
-        {{>_message}}
-        {{{body}}}
-    </main>
-    {{>_footer}}
+  {{>_message}}
+<main>
+  {{{body}}}
+</main>
+
+{{>_footer}}
 </body>
 </html>

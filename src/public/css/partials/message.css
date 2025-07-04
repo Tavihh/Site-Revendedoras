@@ -11,7 +11,7 @@
 }
 
 .alert-error{
-    background-color: rgba(255, 0, 0, 0.393);
+    background-color: #ff000064;
 }
 .alert-success{
     background-color: #a0e0a0;

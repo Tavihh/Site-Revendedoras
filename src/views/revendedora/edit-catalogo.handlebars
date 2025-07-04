@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/css/home/form.css">
+
+<section>
+    <h2>Catalogo</h2>
+    <form action="/revendedora/edit-catalogo" method="post">
+        
+        <div class="cores-container">
+            <label class="radio-color" style="--cor:#333">
+                <input type="radio" name="corFundo" value="#333" {{#if (eq catalogo.corFundo "#333")}}checked{{/if}} />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#de5068">
+                <input type="radio" name="corFundo" value="#de5068" {{#if (eq catalogo.corFundo "#de5068")}}checked{{/if}} />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#6a0dad">
+                <input type="radio" name="corFundo" value="#6a0dad" {{#if (eq catalogo.corFundo "#6a0dad")}}checked{{/if}} />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#0970cc">
+                <input type="radio" name="corFundo" value="#0970cc" {{#if (eq catalogo.corFundo "#0970cc")}}checked{{/if}} />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#1b6a3e">
+                <input type="radio" name="corFundo" value="#1b6a3e" {{#if (eq catalogo.corFundo "#1b6a3e")}}checked{{/if}} />
+                <span></span>
+            </label>
+            <label class="radio-color" style="--cor:#630d0c">
+                <input type="radio" name="corFundo" value="#630d0c" {{#if (eq catalogo.corFundo "#630d0c")}}checked{{/if}}/>
+                <span></span>
+            </label>
+            <br><br>
+        </div>
+
+
+        <input class="form-input" type="text" name="nomeCatalogo" id="nomeCatalogo" placeholder="Nome da Loja" value="{{catalogo.nomeCatalogo}}">
+        <input class="form-input" type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" oninput="mascaraTelefone(this)" required value="{{catalogo.telefone}}">
+        <button type="submit">Atualizar Catalogo</button>
+    </form>
+</section>
+
+<script>
+    const inputTelefone = window.document.getElementsByName('telefone')[0]
+
+    let value = inputTelefone.value.replace(/\D/g, ''); // Remove tudo o que não for número
+    if (value.length <= 10) {
+        inputTelefone.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    } else {
+        inputTelefone.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    }
+
+
+    function mascaraTelefone(input) {
+    let value = input.value.replace(/\D/g, ''); // Remove tudo o que não for número
+    if (value.length <= 10) {
+        input.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    } else {
+        input.value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    }
+}
+</script>

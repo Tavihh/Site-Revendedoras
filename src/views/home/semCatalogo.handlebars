@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/home/catalogo.css">
+</head>
+<body>
+
+  <header>
+    <h1>Catalogo Não Encontrado</h1>
+  </header>
+
+  <div class="pesquisa-container">
+    <input type="text" id="busca" placeholder="Buscar produto...">
+  </div>
+
+  <section class="catalogo" id="catalogo">
+    {{#each produtos}}
+      <a class="produto-link" data-nome="{{nome}}" href="https://wa.me/55{{../catalogo.telefone}}?text=Olá! Tenho interesse no produto: {{nome}}" target="_blank">
+        <div class="produto">
+          <img src="/produtos/{{path_foto}}" alt="{{nome}}">
+          <div class="produto-info">
+            <h3>{{nome}}</h3>
+            <p>R$ {{preco}}</p>
+          </div>
+        </div>
+      </a>
+    {{/each}}
+  </section>
+
+  {{>_footer}}
+
+  <script>
+    const input = document.getElementById('busca');
+    const produtos = document.querySelectorAll('.produto-link');
+    const header = document.getElementsByTagName('header')[0]
+
+    header.style.backgroundColor = '{{catalogo.corFundo}}';
+
+
+    input.addEventListener('input', () => {
+      const termo = input.value.toLowerCase();
+      produtos.forEach(prod => {
+        const nome = prod.getAttribute('data-nome').toLowerCase();
+        prod.style.display = nome.includes(termo) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
+

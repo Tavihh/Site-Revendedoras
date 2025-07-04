@@ -1,32 +1,46 @@
 <link rel="stylesheet" href="/css/admin/painel.css">
 
-<hr>
-<h2>Painel de Produtos</h2>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-                <td class="imagem">Foto</td>
-                <td>Nome</td>
-                <td>Preço</td>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each produto}}
-            <tr onclick="location.href='/admin/produto/editar/{{id}}'">
-                <td class="imagem"><img src="/produtos/{{path_foto}}" alt=""></td>
-                <td>{{nome}}</td>
-                <td>{{preco}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">
-                    Total Produtos: {{produto.total}}
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+<div class="container">
+
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Pesquisar produto...">
 </div>
+
+<table id="tabela-catalogos">
+    <thead>
+    <tr>
+        <th>Catalogo</th>
+        <th>Cobrança</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+
+      {{#each catalogo}}
+        <tr onclick="location.href = '/admin/edit/{{nomeCatalogo}}'">
+            <td>{{nomeCatalogo}}</td>
+            <td class="pq">01/10</td>
+            {{!-- <td class="pq">
+                <div class="status"></div>
+            </td> --}}
+            <td class="pq">{{status}}</td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+</table>
+</div>
+
+<script>
+    // Filtro de pesquisa
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const filtro = this.value.toLowerCase();
+      const linhas = document.querySelectorAll("#tabela-catalogos tbody tr");
+
+      linhas.forEach(linha => {
+        const nome = linha.querySelector("td").textContent.toLowerCase();
+        linha.style.display = nome.includes(filtro) ? "" : "none";
+      });
+    });
+</script>

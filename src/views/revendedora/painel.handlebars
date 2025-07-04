@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/revendedora/painel.css">
+
+{{#if catalogo.status}}
+{{else}}
+    <p class="assinatura">Coloque seu catalogo no ar clicando <a href="https://wa.me/5562992749698?text=Olá! Quero Assinar o Catalogo para Revendedoras!" target="_blank">aqui</a></p>
+{{/if}}
+
+<div class="container">
+
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Pesquisar produto...">
+</div>
+
+<table id="tabela-produtos">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+
+      {{#each produtos}}
+        <tr>
+            <td>{{nome}}</td>
+            <td>R${{preco}}</td>
+            <td>
+              <button class="btn-editar" onclick="editarProduto({{id}})">Editar</button>
+              <button class="btn-excluir" onclick="excluirProduto({{id}})">Excluir</button>
+            </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+</table>
+
+<button class="btn-compartilhar" onclick="compartilharCatalogo('{{catalogo.nomeCatalogo}}')">📲 Compartilhar Catálogo no WhatsApp</button>
+
+</div>
+
+
+
+
+<script>
+    function editarProduto(id) {
+      window.location.href = `/revendedora/edit-produto/${id}`;
+    }
+    function excluirProduto(id) {
+      window.location.href = `/revendedora/excluir-produto/${id}`;
+    }
+
+    function compartilharCatalogo(nome) {
+      const linkCatalogo = `https://revendedora.xyz/${nome}`;
+      const mensagem = `Confira meu catálogo de produtos aqui: ${linkCatalogo}`;
+      const url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, "_blank");
+    }
+
+    // Filtro de pesquisa
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const filtro = this.value.toLowerCase();
+      const linhas = document.querySelectorAll("#tabela-produtos tbody tr");
+
+      linhas.forEach(linha => {
+        const nome = linha.querySelector("td").textContent.toLowerCase();
+        linha.style.display = nome.includes(filtro) ? "" : "none";
+      });
+    });
+</script>
