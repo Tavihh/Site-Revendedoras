@@ -16,19 +16,17 @@
     <input type="text" id="busca" placeholder="Buscar produto...">
   </div>
 
-  <section class="catalogo" id="catalogo">
+  <section class="catalogo">
     {{#each produtos}}
-      <a class="produto-link" data-nome="{{nome}}" href="https://wa.me/55{{../catalogo.telefone}}?text=Olá! Tenho interesse no produto: {{nome}}" target="_blank">
-        <div class="produto">
-          <img src="/produtos/{{path_foto}}" alt="{{nome}}">
-          <div class="produto-info">
-            <h3>{{nome}}</h3>
-            <p>R$ {{preco}}</p>
-          </div>
+    <a class="produto-link" data-nome="{{nome}}" href="{{#if link}} {{link}} {{else}} https://wa.me/55{{../catalogo.telefone}}?text=Olá! Tenho interesse no produto:{{{nome}}} {{/if}}">
+        <div class="card">
+            <img src="/produtos/{{path_foto}}" alt="">
+            <p class="title">{{nome}}</p>
+            <p class="price">R${{preco}} </p>
         </div>
-      </a>
+    </a>
     {{/each}}
-  </section>
+</section>
 
   {{>_footer}}
 
