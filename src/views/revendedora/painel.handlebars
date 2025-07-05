@@ -54,14 +54,14 @@
       window.open(url, "_blank");
     }
 
-    // Filtro de pesquisa
-    document.getElementById("searchInput").addEventListener("input", function () {
-      const filtro = this.value.toLowerCase();
-      const linhas = document.querySelectorAll("#tabela-produtos tbody tr");
+      // Filtro de pesquisa
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const filtro = this.value.toLowerCase();
+        const linhas = document.querySelectorAll("#tabela-produtos tbody tr");
 
-      linhas.forEach(linha => {
-        const nome = linha.querySelector("td").textContent.toLowerCase();
-        linha.style.display = nome.includes(filtro) ? "" : "none";
+        linhas.forEach(linha => {
+          const nome = linha.querySelectorAll("td")[1].textContent.toLowerCase();
+          linha.style.display = nome.includes(filtro) ? "" : "none";
+        });
       });
-    });
 </script>
