@@ -14,6 +14,11 @@ form {
   gap: 10px;
 }
 
+form img {
+  width: 200px;
+  margin: auto;
+}
+
 input, textarea, button {
   padding: 10px;
   border: 1px solid #ccc;
@@ -62,6 +67,14 @@ button {
 }
 
 div.status span{
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.danger {
+  background-color: #ff0000;
+}
+
+.danger:hover {
+  background-color: #ff000064;
 }

@@ -63,8 +63,7 @@ app.get('/:nomeCatalogo', (req,res) => {
             res.redirect('/')
         })
     }).catch((err) => {
-        req.flash('error_msg', 'Erro ao buscar Catalogo')
-        res.redirect('/')
+        res.render('home/semCatalogo', {layout:''})
     })
 })
 

@@ -13,7 +13,11 @@
     padding: 10px;
     font-size: 16px;
 }
-
+.tabela-rolagem {
+    max-height: calc(100vh - 330px);
+    min-height: calc(100vh - 330px);
+    overflow: auto;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -21,40 +25,34 @@ table {
     box-shadow: 0 0 5px #ccc;
 }
 
-th, td {
-    padding: 12px;
+th {
     border: 1px solid #ddd;
     text-align: left;
+    padding: 12px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+td:nth-child(odd) {
+    width: 80px;
+    height: 80px;
+}
+
+td img {
+    width: 100%;
+    border-radius: 5px;
 }
 
 th {
     background-color: #eee;
 }
 
-.btn-editar {
-    background-color: #4caf50;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
+tr:hover {
+    background-color: #ccc;
     cursor: pointer;
-}
-
-.btn-excluir {
-    background-color: #ff0000a6;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-editar:hover {
-    background-color: #45a049;
-}
-
-.btn-excluir:hover {
-    background-color: #ff0000;
 }
 
 .btn-compartilhar {

@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/home/form.css">
+
+<section>
+    <h2>Excluir</h2>
+    <form action="/revendedora/excluir-produto/{{produto.id}}" method="POST">
+
+        <img src="/produtos/{{produto.path_foto}}" alt="">
+        <p>Deseja Mesmo Excluir esse produto?</p>
+        <button type="submit" class="danger">Excluir</button>
+        <button type="button" onclick="location.href='/revendedora/edit-produto/{{produto.id}}'">Voltar</button>
+    </form>
+</section>

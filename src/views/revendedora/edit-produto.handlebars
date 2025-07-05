@@ -7,5 +7,7 @@
         <input type="number" min="0" step="0.01" name="preco" placeholder="Preço" required value="{{produto.preco}}">
         <input type="text" name="link" id="link" placeholder="Link (opcional)" value="{{produto.link}}">
         <button type="submit">Salvar</button>
+        <button type="button" onclick="location.href='/revendedora'">Voltar</button>
+        <button type="button" onclick="location.href='/revendedora/excluir-produto/confirmar/{{produto.id}}'" class="danger">Excluir</button>
     </form>
 </section>

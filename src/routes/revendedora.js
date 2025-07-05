@@ -41,21 +41,52 @@ router.get('/edit-catalogo', (req,res) => {
 })
 
 router.get('/add-produto', (req,res) => {
-    res.render('revendedora/add-produto')
+    Catalogo.findOne({where:{fk_id:req.user.id}}).then((catalogo) => {
+        res.locals.catalogo = catalogo.toJSON()
+        res.render('revendedora/add-produto')
+    }).catch((err) => {
+        req.flash('error_msg', 'Erro ao buscar Catalogo')
+        res.redirect('/')
+    })
 })
 
 router.get('/edit-produto/:id', (req,res) => {
     const id = req.params.id
-    Produto.findOne(({where:{id}})).then((produto) => {
-        res.locals.produto = produto.toJSON()
-        res.render('revendedora/edit-produto')
+    Catalogo.findOne({where:{fk_id:req.user.id}}).then((catalogo) => {
+        Produto.findOne(({where:{id}})).then((produto) => {
+                res.locals.catalogo = catalogo.toJSON()
+                res.locals.produto = produto.toJSON()
+                res.render('revendedora/edit-produto')
+            }).catch((err) => {
+                req.flash('error_msg', 'Produto não existe!')
+                res.redirect('/revendedora')
+            })
     }).catch((err) => {
-        req.flash('error_msg', 'Produto não existe!')
+        req.flash('error_msg', 'Erro ao buscar Catalogo')
+        res.redirect('/')
+    })
+})
+
+router.get('/excluir-produto/confirmar/:id', (req,res) => {
+
+
+    const id = req.params.id
+    Catalogo.findOne({where:{fk_id:req.user.id}}).then((catalogo) => {
+        Produto.findOne(({where:{id}})).then((produto) => {
+                res.locals.catalogo = catalogo.toJSON()
+                res.locals.produto = produto.toJSON()
+                res.render('revendedora/confirmarExclusao')
+            }).catch((err) => {
+                req.flash('error_msg', 'Produto não existe!')
+                res.redirect('/revendedora')
+            })
+    }).catch((err) => {
+        req.flash('error_msg', 'Erro ao buscar Catalogo')
         res.redirect('/revendedora')
     })
 })
 
-router.get('/excluir-produto/:id', (req,res)=>{
+router.post('/excluir-produto/:id', (req,res)=>{
     Produto.findOne({where:{id:req.params.id}}).then((produto)=>{
         if(produto){
             fs.promises.rm(path.join(__dirname,`../public/produtos/${produto.toJSON().path_foto}`),{force:true}).then(()=>{

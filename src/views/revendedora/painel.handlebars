@@ -11,29 +11,26 @@
     <input type="text" id="searchInput" placeholder="🔍 Pesquisar produto...">
 </div>
 
-<table id="tabela-produtos">
-    <thead>
-    <tr>
-        <th>Nome</th>
-        <th>Preço</th>
-        <th>Ações</th>
-    </tr>
-    </thead>
-    <tbody>
-
-      {{#each produtos}}
-        <tr>
-            <td>{{nome}}</td>
-            <td>R${{preco}}</td>
-            <td>
-              <button class="btn-editar" onclick="editarProduto({{id}})">Editar</button>
-              <button class="btn-excluir" onclick="excluirProduto({{id}})">Excluir</button>
-            </td>
-        </tr>
-      {{/each}}
-
-    </tbody>
-</table>
+<section class="tabela-rolagem">
+  <table id="tabela-produtos">
+      <thead>
+      <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+          <th>Preço</th>
+      </tr>
+      </thead>
+      <tbody>
+        {{#each produtos}}
+          <tr onclick="editarProduto({{id}})">
+              <td><img src="/produtos/{{path_foto}}" alt=""></td>
+              <td>{{nome}}</td>
+              <td>R${{preco}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+  </table>
+</section>
 
 <button class="btn-compartilhar" onclick="compartilharCatalogo('{{catalogo.nomeCatalogo}}')">📲 Compartilhar Catálogo no WhatsApp</button>
 
