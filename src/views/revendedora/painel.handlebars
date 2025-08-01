@@ -49,7 +49,7 @@
 
     function compartilharCatalogo(nome) {
       const linkCatalogo = `https://revendedora.xyz/${nome}`;
-      const mensagem = `Confira meu catálogo de produtos aqui: ${linkCatalogo}`;
+      const mensagem = `${linkCatalogo}`;
       const url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
       window.open(url, "_blank");
     }

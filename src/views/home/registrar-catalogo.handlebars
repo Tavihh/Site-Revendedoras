@@ -33,8 +33,9 @@
         </div>
 
 
-        <input class="form-input" type="text" name="nomeCatalogo" id="nomeCatalogo" placeholder="Nome da Loja">
+        <input class="form-input" type="text" name="nomeCatalogo" id="nomeCatalogo" placeholder="Nome da Loja" oninput="this.value = this.value.replace(/\s/g, '')">
         <input class="form-input" type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" oninput="mascaraTelefone(this)" required>
+        
         <button type="submit">Criar Catalogo</button>
     </form>
 </section>
