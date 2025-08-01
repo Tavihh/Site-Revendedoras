@@ -76,9 +76,10 @@ a{
 }
 
 .card img{
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
+    min-width: 160px;
+    max-width: 160px;
+    min-height: 160px;
+    object-fit: contain;
     object-position: center center;
 
 }

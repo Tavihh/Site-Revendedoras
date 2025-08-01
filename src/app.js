@@ -52,7 +52,11 @@ app.get('/:nomeCatalogo', (req,res) => {
 
             if(catalogo.status || req.user) {   
                 res.locals.catalogo = catalogo.toJSON()
-                res.locals.produtos = produtos.map(item => item.toJSON())
+                res.locals.produtos = produtos.map(item => {
+                    item = item.toJSON();
+                    item.preco = parseFloat(item.preco).toFixed(2).replace('.', ','); // Isso retorna uma string "123.45"
+                    return item;
+                });
                 res.render('home/catalogo', {layout:''})
             } else {
                 res.render('home/semCatalogo', {layout:''})

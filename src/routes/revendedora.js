@@ -15,7 +15,11 @@ router.get('/', (req,res) => {
     Catalogo.findOne({where:{fk_id:req.user.id}}).then((catalogo) => {
         Produto.findAll(({where:{fk_id:catalogo.id}})).then((produtos) => {
             res.locals.catalogo = catalogo.toJSON()
-            res.locals.produtos = produtos.map(item => item.toJSON())
+            res.locals.produtos = produtos.map(item => {
+                item = item.toJSON();
+                item.preco = parseFloat(item.preco).toFixed(2).replace('.', ','); // Isso retorna uma string "123.45"
+                return item;
+            });
             res.render('revendedora/painel')
         }).catch((err) => {
             req.flash('error_msg', 'Erro ao buscar Produtos')
