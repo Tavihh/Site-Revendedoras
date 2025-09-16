@@ -1,8 +1,11 @@
 section {
   padding: 20px;
   margin-bottom: 20px;
-  background: white;
+  background: rgba(255, 255, 255, 0.521);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  border-radius: 20px;
+  margin: 10px auto;
 }
 
 form {
@@ -20,14 +23,19 @@ input, textarea, button {
 }
 
 button {
-  background-color: #6a0dad;
+  background-color: #075E54;
   color: white;
   cursor: pointer;
   border: none;
 }
 
+button:hover {
+  background-color: #25D366;
+  color: white;
+}
+
 .plan {
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 10px;
   margin: 10px auto;
   padding: 15px;
@@ -42,6 +50,8 @@ ul {
 
 li {
   background: #fff;
+  border: 1px solid black;
+  font-size: 0.9em;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;

@@ -16,9 +16,11 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   flex-direction: column;
+  background: black url('/img/background.png') repeat fixed;
+  background-size: 200px;
 }
 
-header {
+/* header {
   padding: 20px;
   margin-bottom: 20px;
   background: white;
@@ -33,20 +35,37 @@ header {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+} */
+
+header {
+  color: white;
+  height: 60px;
+  padding: 0px 8px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: #075E54;
 }
 
-main {
+header h1 {
+  font-size: 1.3em;
+}
+
+.btn {
+  color: #DCF8C6;
+  font-weight: 600;
+  padding: 8px 10px;
+  background: #fff;
+  color: #075E54;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.btn:hover {
+  background-color: #25D366;
+  color: white;
+}
+
+main{
   flex: auto;
-}
-
-@media screen and (max-width:600px) {
-  header {
-    padding: 20px 15px;
-  }
-  header h1 {
-    font-size: 1.5em;
-  }
-  .btn {
-      margin: 10px 2.5px;
-  }
 }

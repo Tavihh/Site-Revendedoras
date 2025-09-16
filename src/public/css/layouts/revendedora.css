@@ -10,6 +10,8 @@ body {
     justify-content: space-between;
     height: 100vh;
     flex-direction: column;
+    background: black url('/img/background.png') repeat fixed;
+    background-size: 200px;
 }
 
 header {
@@ -46,23 +48,33 @@ header .status {
 }
 
 nav {
-    display: flex;
-    gap: 15px;
-    padding: 15px 20px;
+    display: none;
+    position: absolute;
+    top: 50px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    gap: 0px;
+    padding: 0px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+
+    padding: 10px 0;
+    background-color: #333;
+    padding: 15px 20px;
 }
 
 nav a:hover {
     text-decoration: underline;
+    background-color: #666;
+    text-decoration: none;
 }
 
 .menu-toggle {
-    display: none;
     background: none;
     border: none;
     color: white;
@@ -71,9 +83,24 @@ nav a:hover {
     padding: 15px 20px;
 }
 
+nav.active {
+display: flex;
+}
+
 .assinatura {
+    padding-left: 10px;
     font-weight: 400;
     font-size: 0.9em;
+    background-color: black;
+    color: white;
+}
+.assinatura a {
+    color: whitesmoke;
+}
+
+.assinatura a:hover {
+    background-color: white;
+    color: black;
 }
 
 main {
