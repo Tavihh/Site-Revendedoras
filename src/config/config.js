@@ -10,7 +10,6 @@ const Loja = require('../models/Catalogo')
 
 
 // helper
-
 const handlebars = hbs.create({
   defaultLayout: 'main',
   helpers: {

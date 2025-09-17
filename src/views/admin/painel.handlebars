@@ -6,30 +6,31 @@
 <div class="search-bar">
     <input type="text" id="searchInput" placeholder="🔍 Pesquisar produto...">
 </div>
+<section class="tabela-rolagem">
+  <table id="tabela-catalogos">
+      <thead>
+      <tr>
+          <th>Catalogo</th>
+          <th>Cobrança</th>
+          <th>Status</th>
+      </tr>
+      </thead>
+      <tbody>
 
-<table id="tabela-catalogos">
-    <thead>
-    <tr>
-        <th>Catalogo</th>
-        <th>Cobrança</th>
-        <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
+        {{#each catalogo}}
+          <tr onclick="location.href = '/admin/edit/{{nomeCatalogo}}'">
+              <td>{{nomeCatalogo}}</td>
+              <td class="pq">01/10</td>
+              {{!-- <td class="pq">
+                  <div class="status"></div>
+              </td> --}}
+              <td class="pq">{{status}}</td>
+          </tr>
+        {{/each}}
 
-      {{#each catalogo}}
-        <tr onclick="location.href = '/admin/edit/{{nomeCatalogo}}'">
-            <td>{{nomeCatalogo}}</td>
-            <td class="pq">01/10</td>
-            {{!-- <td class="pq">
-                <div class="status"></div>
-            </td> --}}
-            <td class="pq">{{status}}</td>
-        </tr>
-      {{/each}}
-
-    </tbody>
-</table>
+      </tbody>
+  </table>
+</section>
 </div>
 
 <script>

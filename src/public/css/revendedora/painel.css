@@ -14,8 +14,8 @@
     font-size: 16px;
 }
 .tabela-rolagem {
-    max-height: calc(100vh - 330px);
-    min-height: calc(100vh - 330px);
+    max-height: calc(100vh - 300px);
+    min-height: calc(100vh - 300px);
     overflow: auto;
 }
 table {
