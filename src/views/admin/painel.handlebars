@@ -11,7 +11,6 @@
       <thead>
       <tr>
           <th>Catalogo</th>
-          <th>Cobrança</th>
           <th>Status</th>
       </tr>
       </thead>
@@ -20,10 +19,6 @@
         {{#each catalogo}}
           <tr onclick="location.href = '/admin/edit/{{nomeCatalogo}}'">
               <td>{{nomeCatalogo}}</td>
-              <td class="pq">01/10</td>
-              {{!-- <td class="pq">
-                  <div class="status"></div>
-              </td> --}}
               <td class="pq">{{status}}</td>
           </tr>
         {{/each}}
